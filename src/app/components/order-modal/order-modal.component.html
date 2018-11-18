@@ -1,0 +1,27 @@
+<h1 mat-dialog-title class="order-title">Оформлення замовлення</h1>
+<form action="" [formGroup]="orderForm" (submit)="toDrawUpOrder(); orderForm.reset()">
+    <mat-form-field>
+        <input formControlName="userName" matInput placeholder="Ім'я">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input formControlName="userSurname" matInput placeholder="Прізвищe">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input formControlName="userCity" matInput placeholder="Місто">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input formControlName="userEmail" matInput placeholder="Email">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input formControlName="userPhone" matInput placeholder="Номер телефону">
+    </mat-form-field>
+    <br>
+    <div class="button-group">
+        <button mat-raised-button class="close-order-modal" (click)="closeOrder()">Вийти</button>
+        <button mat-raised-button color="primary" type="submit">Оформити замовлення</button>
+    </div>
+</form>

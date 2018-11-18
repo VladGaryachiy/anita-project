@@ -1,0 +1,44 @@
+.result-filter-products {
+  text-align: center;
+  color: rgba(0,0,0,.54);
+  font-size: 15px;
+  font-family: Roboto,"Helvetica Neue",sans-serif;
+}
+.basket-title {
+  text-align: center;
+  background-color: #f3f3f3;
+}
+.basket-main {
+  height: 90%;
+  width: 100%;
+  .basket-products {
+    width: 97%;
+    max-height: 350px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 30px;
+    padding-top: 5px;
+    overflow-y: auto;
+    table {
+      width: 100%;
+    }
+  }
+}
+.basket-actions {
+  padding-top: 20px;
+  height: 10%;
+}
+.product-list {
+  outline: none;
+  overflow: auto;
+  height: 70%;
+}
+.total {
+  display: flex;
+  justify-content: space-between;
+}
+
+.basket-footer {
+  display: flex;
+  flex-direction: row-reverse;
+}

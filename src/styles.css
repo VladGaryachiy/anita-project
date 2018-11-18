@@ -1,0 +1,18 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+body {
+    margin: 0;
+    padding: 0;
+}
+.toast-style {
+    color: #fafff8;
+}
+simple-snack-bar {
+    font-size: 16px !important;
+    padding-left: 13px !important;
+    font-weight: 600;
+}
+.mat-slider-thumb-label-text {
+    font-size: 9px !important;
+}

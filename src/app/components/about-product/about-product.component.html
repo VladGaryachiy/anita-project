@@ -1,0 +1,29 @@
+
+<mat-card style="box-shadow: none; padding: 0" class="product-card">
+    <img style="height: 400px" class="card-image" mat-card-image [src]="'../../../../'+product.image" tabindex="-1">
+    <div class="product-name">
+        <h3 class="title">{{correctName}}</h3>
+    </div>
+    <mat-card-content  tabindex="-1">
+        <mat-card-title>Характеристики: </mat-card-title>
+        <mat-card-subtitle *ngIf="product.about">{{product.about}}</mat-card-subtitle>
+        <mat-card-subtitle>{{product.brand}}</mat-card-subtitle>
+        <mat-card-subtitle>Тип: {{product.type}}</mat-card-subtitle>
+        <mat-card-subtitle *ngIf="product.style">{{product.style}}</mat-card-subtitle>
+        <mat-card-subtitle>{{product.bodyColor}}</mat-card-subtitle>
+        <h4 class="prop-title">Метеріал: </h4>
+        <mat-card-subtitle *ngFor="let property of material">{{property}}</mat-card-subtitle>
+        <div class="size-box" *ngIf="size.length">
+            <h4 class="prop-title">Розміри: </h4>
+            <mat-card-subtitle *ngFor="let s of size">{{s}}</mat-card-subtitle>
+        </div>
+        <mat-card-subtitle *ngIf="product.country">{{product.country}}</mat-card-subtitle>
+        <mat-card-subtitle class="price-title">{{product.price}}</mat-card-subtitle>
+    </mat-card-content>
+    <mat-card-actions class="actions-container" tabindex="-1">
+        <div>
+            <button tabindex="-1" mat-button color="primary" (click)="addProduct(product)">В корзину</button>
+            <button tabindex="-1" mat-button (click)="exit()">Вийти</button>
+        </div>
+    </mat-card-actions>
+</mat-card>

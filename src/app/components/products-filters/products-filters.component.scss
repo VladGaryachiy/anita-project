@@ -1,0 +1,56 @@
+.filter-container {
+  margin-top: 80px;
+  .filter-title {
+    text-align: center;
+    font-size: 18px;
+    padding-left: 20px;
+    font-family: Snell Roundhand, cursive;
+    color: black;
+}
+  .filters-component-container {
+    .prop-title {
+      padding-left: 20px;
+      font-family: Snell Roundhand, cursive;
+      font-size: 15px;
+      color: #ff3475de;
+    }
+    .range-container {
+      padding-top: 10px;
+      padding-right: 10px;
+      .ranger-box {
+        mat-slider {
+          margin-left: 40px;
+        }
+      }
+      .price-label {
+        padding-left: 60%;
+      }
+    }
+    .brand-container {
+      padding-top: 10px;
+      padding-right: 10px;
+      mat-form-field {
+        margin-left: 40px;
+      }
+    }
+  }
+  mat-slider {
+    width: 200px;
+  }
+
+  .order-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    .order-button {
+      font-family: Snell Roundhand, cursive;
+      background-color: #00a223;
+      color: white;
+      border-radius: 2px;
+      outline: none;
+      padding: 7px;
+      border: 1px solid #00a223;
+      cursor: pointer
+    }
+  }
+}

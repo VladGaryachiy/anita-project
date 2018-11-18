@@ -1,0 +1,54 @@
+<div class="filter-container">
+    <h3 class="filter-title">Пошук по параметрам:</h3>
+    <div class="filters-component-container">
+        <div class="range-container">
+            <h3 class="prop-title">Ціна: {{checkPrice}} грн.</h3>
+            <div class="ranger-box">
+                <mat-slider
+                    [min]="rangeOptions.min"
+                    [max]="rangeOptions.max"
+                    [step]="rangeOptions.step"
+                    [thumbLabel]="rangeOptions.thumbLabel"
+                    (change)="onPriceFilter($event)"
+                    [(ngModel)]="checkPrice"
+                ></mat-slider>
+            </div>
+        </div>
+        <!--brand-->
+        <div class="brand-container">
+            <h3 class="prop-title">Виробник:</h3>
+            <mat-form-field class="brand-filter" >
+                <mat-select [formControl]="position">
+                    <mat-option (click)="onBrandFilter(positionOption)"  *ngFor="let positionOption of positionOptions" [value]="positionOption">
+                        {{positionOption}}
+                    </mat-option>
+                </mat-select >
+            </mat-form-field>
+        </div>
+        <!--style-->
+        <div class="brand-container" *ngIf="stylePositionOptions[0] !== undefined">
+            <h3 class="prop-title">Стиль:</h3>
+            <mat-form-field class="brand-filter" >
+                <mat-select [formControl]="stylePosition">
+                    <mat-option (click)="onStyleFilter(stylePositionOption)"  *ngFor="let stylePositionOption of stylePositionOptions" [value]="stylePositionOption">
+                        {{stylePositionOption}}
+                    </mat-option>
+                </mat-select >
+            </mat-form-field>
+        </div>
+        <!--country-->
+        <div class="brand-container">
+            <h3 class="prop-title">Країна:</h3>
+            <mat-form-field class="brand-filter" >
+                <mat-select [formControl]="countryPosition">
+                    <mat-option (click)="onCountryFilter(countryPositionOption)"  *ngFor="let countryPositionOption of countryPositionOptions" [value]="countryPositionOption">
+                        {{countryPositionOption}}
+                    </mat-option>
+                </mat-select >
+            </mat-form-field>
+        </div>
+        <div class="order-container">
+            <button class="order-button" (click)="orderProduct()">Виготовлення на замовлення</button>
+        </div>
+    </div>
+</div>

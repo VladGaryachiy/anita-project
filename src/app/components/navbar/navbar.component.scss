@@ -1,0 +1,106 @@
+.navbar{
+  height: 60px;
+  background: #0b332f;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  .brand {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    color: white;
+    background-color: #ff3475de;
+    margin-left: 20px;
+   .brand-title {
+     font-family: Snell Roundhand, cursive;
+     font-size: 23px;
+     color: #ff3475de;
+     margin-top: 1px;
+     margin-left: 13px;
+
+   }
+   .brand-title:first-letter {
+     color: white;
+     font-size: 27px;
+     letter-spacing: 15px;
+   }
+    //font-style: italic
+  }
+  ul {
+    padding: 0;
+    margin: 0;
+    margin-right: 50px;
+    list-style-type: none;
+
+    li {
+      .search-list-container {
+        position: absolute;
+        .search-list {
+          display: block;
+          color: black;
+          border: 1px solid #f0f0f0;
+          background-color: white;
+          padding: 2px;
+          cursor: pointer;
+        }
+        .search-list:hover {
+          background-color: #f0f0f0;
+        }
+      }
+
+      display: inline-block;
+      .brand-container {
+        margin-left: 100px;
+        display: flex;
+        flex-direction: row;
+        h3 {
+          font-family: Roboto,"Helvetica Neue",sans-serif;
+          font-size: 14px;
+          font-weight: 500;
+          color: white;
+        }
+        mat-form-field {
+          margin-left: 10px;
+          .mat-form-field-wrapper {
+            .mat-form-field-infix {
+              mat-select {
+                .mat-select-value {
+                  color: white !important;
+                }
+              }
+            }
+          }
+        }
+      }
+      .count-product-in-basket{
+        position: absolute;
+        left: 65%;
+        background: red;
+        width: 26px;
+        height: 15px;
+        border-radius: 6px;
+        .amount-prod {
+          display: block;
+          color: white;
+          font-size: 13px;
+          margin-top: -10px;
+        }
+      }
+      .basket-ico {
+        font-size: 30px;
+      }
+      .active-dropdown {
+        color: white;
+      }
+      .active-dropdown:hover {
+        background: #09776c;
+        color:white;
+      }
+    }
+  }
+}

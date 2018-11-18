@@ -1,0 +1,49 @@
+
+  .actions-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .card-image-container {
+    height: 400px;
+    .card-image {
+      height: 400px;
+    }
+  }
+  .prop-title {
+    color: rgba(0,0,0,.87);
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+    font-weight: 500;
+  }
+  .card-image {
+    height: 400px;
+  }
+  .product-name {
+    position: absolute;
+    top: -1%;
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    color: white;
+    background-color: #ff3475de;
+    .title {
+      font-family: Snell Roundhand, cursive;
+      font-size: 17px;
+      color: white;
+      margin-top: 37%;
+      text-align: center;
+    }
+  }
+  .price-title {
+    color: rgba(180, 0, 0, 0.68);
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+
+  }
+  .info-container, .image-container {
+    width: 50%;
+  }
+  .image-container {
+    display: flex;
+    align-items: center;
+  }

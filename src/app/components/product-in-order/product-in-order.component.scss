@@ -1,0 +1,32 @@
+.order-title {
+  text-align: center;
+  background-color: #f3f3f3;
+}
+form {
+  width: 100%;
+  .prop-title {
+    font-size: 16px;
+  }
+  mat-form-field {
+    width: 80%;
+    margin-left: 10%;
+  }
+  .button-group {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 80%;
+    margin-left: 10%;
+    .close-order-modal {
+      margin-left: 15px;
+    }
+  }
+}
+.button-group {
+     display: flex;
+     flex-direction: row-reverse;
+     width: 80%;
+     margin-left: 10%;
+     .close-order-modal {
+       margin-left: 15px;
+     }
+   }

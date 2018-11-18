@@ -1,0 +1,40 @@
+<div class="navbar">
+   <div>
+       <ul>
+           <li *ngFor="let link of navbarMenuConfig">
+               <button [routerLink]='link.url' class="active-dropdown" mat-button *ngIf="!link.dropDownMenu">
+               <span>
+                   {{link.name}}
+               </span>
+               </button>
+               <div *ngIf="link.dropDownMenu">
+                   <button class="active-dropdown" mat-button [matMenuTriggerFor]="menu">
+                       {{link.name}}
+                       <mat-icon>
+                           arrow_drop_down
+                       </mat-icon>
+                   </button>
+                   <mat-menu #menu="matMenu">
+                       <button [routerLink]='[type.url, type.id]' *ngFor="let type of link.dropDownMenu" mat-menu-item>{{type.name}}</button>
+                   </mat-menu>
+               </div>
+           </li>
+           <li>
+               <button (click)="openBasket()"  class="active-dropdown" mat-button>
+                   <mat-icon [matBadge]="amountProducts" matBadgePosition="above after" class="mat-icon-rtl-mirror basket-ico">
+                       shopping_basket
+                   </mat-icon>
+               </button>
+           </li>
+           <li>
+               <input (keyup)="searchProducts($event)" type="text" placeholder="Пошук по типу"/>
+               <ul class="search-list-container" *ngIf="searchProduct">
+                   <li (click)="removeList(product.type, product.name)" class="search-list" *ngFor="let product of searchProduct">{{product.name}} - {{product.type}}</li>
+               </ul>
+           </li>
+       </ul>
+   </div>
+    <div class="brand">
+        <h3 class="brand-title">Аніта</h3>
+    </div>
+</div>

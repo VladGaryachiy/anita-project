@@ -1,0 +1,49 @@
+.about-company-container, .contacts-company-container {
+  display: flex;
+  padding: 15px;
+  flex-direction: row;
+  margin-top: 40px;
+  .company-image-container {
+    width: 40%;
+    background: url("../../../../assets/image/bg1.jpg") no-repeat;
+    background-size: cover;
+    padding: 20px;
+    background-origin: content-box;
+  }
+  .company-strategy-image-container {
+    width: 40%;
+    height: 400px;
+    background: url("../../../../assets/image/strategy.jpg") no-repeat;
+    background-size: cover;
+    padding: 20px;
+    background-origin: content-box;
+  }
+  .company-text-container {
+    width: 60%;
+    padding-left: 15px;
+    .about-title {
+      color: #ff3475de;
+      font-family: Roboto,"Helvetica Neue",sans-serif;
+      font-size: 26px;
+      border-bottom: 1px solid #ff3475de;
+      padding-bottom: 15px;
+    }
+    .about-text {
+      text-align: justify;
+      font-size: 22px;
+      font-family: Roboto,"Helvetica Neue",sans-serif;
+    }
+  }
+}
+.contacts-company-container {
+  .map-image-container {
+    width: 50%;
+  }
+  .company-text-container {
+    width: 50%;
+  }
+}
+
+.not-margin {
+  margin-top: -10px;
+}

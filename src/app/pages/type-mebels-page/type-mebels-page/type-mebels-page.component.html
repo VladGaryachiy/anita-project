@@ -1,0 +1,27 @@
+<div class="filters-container">
+    <app-products-filters (resultFilter)="filter($event)"  [productsList]="dataForFilter">
+    </app-products-filters>
+</div>
+<div class="products-main-container">
+    <div class="products-container" *ngIf="chooiseProduct">
+        <mat-card class="product-card" *ngFor="let product of chooiseProduct">
+            <mat-card-header>
+                <mat-card-title>{{product.name}}</mat-card-title>
+                <mat-card-subtitle >{{product.type}}</mat-card-subtitle>
+                <mat-card-subtitle>{{product.brand}}</mat-card-subtitle>
+                <mat-card-subtitle>{{product.price}}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image [src]="'../../../../'+product.image">
+            <mat-card-content>
+
+            </mat-card-content>
+            <mat-card-actions class="actions-container">
+                <button mat-button (click)="addProduct(product)">В корзину</button>
+                <button mat-button (click)="aboutProduct(product)">Деталі</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>
+<div *ngIf="!chooiseProduct.length">
+    <h2 class="result-filter-products">Товар відсутній</h2>
+</div>

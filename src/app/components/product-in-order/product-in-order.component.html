@@ -1,0 +1,84 @@
+<div class="order-container" *ngIf="!resultProductInOrder">
+    <h1 mat-dialog-title class="order-title">Мебель на замовлення</h1>
+    <form action="" [formGroup]="productInOrderForm" (submit)="toDrawUpOrder(productInOrderForm, fType, fStyle, fMaterial, fCountry); productInOrderForm.reset()">
+        <h3 mat-dialog-title class="prop-title">Тип:</h3>
+        <mat-form-field class="brand-filter" >
+            <mat-select #fType  [formControl]="fTypesPosition">
+                <mat-option  *ngFor="let typeF of fournitureTypes" [value]="typeF">
+                    {{typeF}}
+                </mat-option>
+            </mat-select >
+        </mat-form-field>
+        <h3 mat-dialog-title class="prop-title">Стиль:</h3>
+        <mat-form-field class="brand-filter" >
+            <mat-select #fStyle [formControl]="fStylesPosition">
+                <mat-option *ngFor="let styleF of fournitureStyles" [value]="styleF">
+                    {{styleF}}
+                </mat-option>
+            </mat-select >
+        </mat-form-field>
+        <h3 mat-dialog-title class="prop-title">Матеріал:</h3>
+        <mat-form-field class="brand-filter" >
+            <mat-select #fMaterial [formControl]="fMaterialsPosition">
+                <mat-option *ngFor="let materialF of fournitureMaterials" [value]="materialF">
+                    {{materialF}}
+                </mat-option>
+            </mat-select >
+        </mat-form-field><h3 mat-dialog-title class="prop-title">Країна виробник:</h3>
+        <mat-form-field class="brand-filter" >
+            <mat-select #fCountry [formControl]="fCountryPosition">
+                <mat-option *ngFor="let countryF of fournitureCountry" [value]="countryF">
+                    {{countryF}}
+                </mat-option>
+            </mat-select >
+        </mat-form-field>
+        <h3 mat-dialog-title class="prop-title">Бажана ціна:</h3>
+        <mat-form-field>
+            <input type="number" formControlName="furniturePrice" matInput placeholder="0">
+        </mat-form-field>
+        <h2 mat-dialog-title class="order-title">Особиста інформація</h2>
+        <mat-form-field>
+            <input formControlName="userName" matInput placeholder="Ім'я">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input formControlName="userSurname" matInput placeholder="Прізвищe">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input formControlName="userCity" matInput placeholder="Місто">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input formControlName="userEmail" matInput placeholder="Email">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input formControlName="userPhone" matInput placeholder="Номер телефону">
+        </mat-form-field>
+        <br>
+        <div class="button-group">
+            <button mat-raised-button class="close-order-modal" (click)="exit()">Вийти</button>
+            <button mat-raised-button color="primary" type="submit">Оформити замовлення</button>
+        </div>
+    </form>
+</div>
+<div class="result-order" *ngIf="resultProductInOrder">
+    <h2 mat-dialog-title class="order-title">Ваше замовлення</h2>
+    <h4 mat-dialog-title>Тип: {{resultProductInOrder.fournitureType}}</h4>
+    <h4 mat-dialog-title>Стиль: {{resultProductInOrder.fournitureStyle}}</h4>
+    <h4 mat-dialog-title>Матеріал: {{resultProductInOrder.fournitureMaterial}}</h4>
+    <h4 mat-dialog-title>Країна виробник: {{resultProductInOrder.fournitureCountry}}</h4>
+    <h4 mat-dialog-title>Бажана ціна: {{resultProductInOrder.furniturePrice}} грн.</h4>
+    <br>
+    <h2 mat-dialog-title class="order-title">Інформація замовника</h2>
+    <h4 mat-dialog-title>Ім'я: {{resultProductInOrder.userName}}</h4>
+    <h4 mat-dialog-title>Прівзище: {{resultProductInOrder.userSurname}}</h4>
+    <h4 mat-dialog-title>Місто: {{resultProductInOrder.userCity}}</h4>
+    <h4 mat-dialog-title>e-mail: {{resultProductInOrder.userEmail}}</h4>
+    <h4 mat-dialog-title>Номер телефону: {{resultProductInOrder.userPhone}}</h4>
+    <div class="button-group">
+        <button mat-raised-button class="close-order-modal" (click)="exit()">Вийти</button>
+        <button mat-raised-button color="primary" (click)="sendOrder()">Надіслати</button>
+    </div>
+</div>
